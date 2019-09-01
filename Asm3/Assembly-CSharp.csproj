@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\EatDots.cs" />
+    <Compile Include="Assets\Scripts\Manager.cs" />
     <Compile Include="Assets\Scripts\PacmanMove.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>/Users/xianfengzhuge/study/UTS/31263/Asm/Asm3/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>

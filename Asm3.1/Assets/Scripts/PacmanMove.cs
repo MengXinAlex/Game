@@ -18,7 +18,7 @@ public class PacmanMove : MonoBehaviour
     {
         // Move Pacman!
         Vector2 pos = Vector2.MoveTowards(transform.position, dest, speed);
-        GetComponent<Rigidbody2D>().MovePosition(p);
+        GetComponent<Rigidbody2D>().MovePosition(pos);
 
         // Get input
         if ((Vector2)transform.position == dest)

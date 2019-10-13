@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class PinkGhost : MonoBehaviour
 {
     //Store pink ghost pass
@@ -25,5 +25,10 @@ public class PinkGhost : MonoBehaviour
 		Vector2 dest = turnPoints[index].position - transform.position;
 		GetComponent<Animator>().SetFloat("X-axis", dest.x * speed);
 		GetComponent<Animator>().SetFloat("Y-axis", dest.y * speed);
+	}
+	void OnTriggerEnter2D(Collider2D co)
+	{
+		if (co.name == "pacman")
+			SceneManager.LoadScene(2);
 	}
 }

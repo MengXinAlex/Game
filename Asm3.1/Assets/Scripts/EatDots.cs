@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class EatDots : MonoBehaviour
 {
-    // Eat the dots
-    void OnTriggerEnter2D(Collider2D co)
+	// Eat the dots
+	void OnTriggerEnter2D(Collider2D co)
     {   
         if (co.name == "pacman")
 			GetComponent<SpriteRenderer>().enabled = false;
+		    //print(GameObject.FindWithTag("PacMan").GetComponent<AudioSource>());
 	}
 }

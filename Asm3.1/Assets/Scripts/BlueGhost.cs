@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class BlueGhost : MonoBehaviour
 {
 	public float moveSpeed = 4.5f;
@@ -175,5 +175,10 @@ public class BlueGhost : MonoBehaviour
 		float distance = Mathf.Sqrt(dx * dx + dy * dy);
 
 		return distance;
+	}
+	void OnTriggerEnter2D(Collider2D co)
+	{
+		if (co.name == "pacman")
+			SceneManager.LoadScene(2);
 	}
 }

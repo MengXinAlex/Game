@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class GreenGhost : MonoBehaviour
 {
 	public float moveSpeed = 4.5f;
@@ -112,5 +112,9 @@ public class GreenGhost : MonoBehaviour
 
 		return nodeToSelf > nodeToTarget;
 	}
-
+	void OnTriggerEnter2D(Collider2D co)
+	{
+		if (co.name == "pacman")
+			SceneManager.LoadScene(2);
+	}
 }

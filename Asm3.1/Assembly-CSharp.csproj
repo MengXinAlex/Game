@@ -64,6 +64,7 @@
     <Compile Include="Assets\Scripts\EatDots.cs" />
     <Compile Include="Assets\Scripts\GameBoard.cs" />
     <Compile Include="Assets\Scripts\GhostMove.cs" />
+    <Compile Include="Assets\Scripts\GreenGhost.cs" />
     <Compile Include="Assets\Scripts\Node.cs" />
     <Compile Include="Assets\Scripts\PacmanMove.cs" />
     <Compile Include="Assets\Scripts\PinkGhost.cs" />

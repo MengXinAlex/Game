@@ -111,8 +111,8 @@ public class PacmanMove : MonoBehaviour
 
 
 		// Add Animation into it with direction
-		GetComponent<Animator>().SetFloat("X-axis", dest.x * speed);
-        GetComponent<Animator>().SetFloat("Y-axis", dest.y * speed);
+		GetComponent<Animator>().SetFloat("X-axis", dest.x);
+        GetComponent<Animator>().SetFloat("Y-axis", dest.y);
         
     }
 

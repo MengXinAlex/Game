@@ -9,7 +9,7 @@ public class BlueGhost : MonoBehaviour
 	private GameObject pacMan;
 
 	private Node currentNode, targetNode, previousNode;
-	private Vector2 direction, nextDirection;
+	private Vector2 direction;
 
 
 
@@ -30,9 +30,7 @@ public class BlueGhost : MonoBehaviour
 
 		previousNode = currentNode;
 
-		Vector2 pacmanPosition = pacMan.transform.position;
-		Vector2 targetTile = new Vector2(Mathf.RoundToInt(pacmanPosition.x), Mathf.RoundToInt(pacmanPosition.y));
-		targetNode = GetNodeAtPosition(targetTile);
+		targetNode = ChooseNextNode();
 
 
 	}
@@ -65,6 +63,10 @@ public class BlueGhost : MonoBehaviour
 				transform.localPosition += (Vector3)direction * moveSpeed * Time.deltaTime;
 			}
 		}
+
+		// Add Animation into it with direction
+		GetComponent<Animator>().SetFloat("X-axis", direction.x);
+		GetComponent<Animator>().SetFloat("Y-axis", direction.y);
 	}
 
 

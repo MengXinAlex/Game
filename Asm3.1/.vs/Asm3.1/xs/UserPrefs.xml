@@ -1,12 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PacmanMove.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/BlueGhost.cs">
     <Files>
-      <File FileName="Assets/Scripts/PacmanMove.cs" Line="114" Column="51" />
-      <File FileName="Assets/Scripts/Node.cs" Line="3" Column="19" />
-      <File FileName="Assets/Scripts/RedGhost.cs" Line="136" Column="1" />
-      <File FileName="Assets/Scripts/GameBoard.cs" Line="26" Column="39" />
+      <File FileName="Assets/Scripts/PacmanMove.cs" Line="115" Column="61" />
+      <File FileName="Assets/Scripts/Node.cs" />
+      <File FileName="Assets/Scripts/RedGhost.cs" Line="70" Column="56" />
       <File FileName="Assets/Scripts/PinkGhost.cs" Line="30" Column="1" />
-      <File FileName="Assets/Scripts/BlueGhost.cs" Line="122" Column="27" />
+      <File FileName="Assets/Scripts/BlueGhost.cs" Line="154" Column="2" />
+      <File FileName="Assets/Scripts/GreenGhost.cs" Line="19" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">

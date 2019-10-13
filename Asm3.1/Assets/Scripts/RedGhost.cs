@@ -9,7 +9,7 @@ public class RedGhost : MonoBehaviour
 	private GameObject pacMan;
 
 	private Node currentNode, targetNode, previousNode;
-	private Vector2 direction, nextDirection;
+	private Vector2 direction;
 
 
 
@@ -65,6 +65,10 @@ public class RedGhost : MonoBehaviour
 				transform.localPosition += (Vector3)direction * moveSpeed * Time.deltaTime;
 			}
 		}
+
+		// Add Animation into it with direction
+		GetComponent<Animator>().SetFloat("X-axis", direction.x);
+		GetComponent<Animator>().SetFloat("Y-axis", direction.y);
 	}
 
 

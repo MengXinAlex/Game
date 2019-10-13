@@ -9,47 +9,39 @@ public class PacmanMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //make sure it won't change at the begaining of 
         dest = transform.position;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
-    // Update is called once per frame but fixed time interval
-
-    // This is for learing use
     void FixedUpdate()
     {
-        // Move closer to Destination
-        Vector2 p = Vector2.MoveTowards(transform.position, dest, speed);
+        // Move Pacman!
+        Vector2 pos = Vector2.MoveTowards(transform.position, dest, speed);
         GetComponent<Rigidbody2D>().MovePosition(p);
 
-        // Check for Input if not moving
+        // Get input
         if ((Vector2)transform.position == dest)
         {
-            if (Input.GetKey(KeyCode.UpArrow) && valid(Vector2.up))
+            if (Input.GetKey(KeyCode.W) && canMove(Vector2.up))
                 dest = (Vector2)transform.position + Vector2.up;
-            if (Input.GetKey(KeyCode.RightArrow) && valid(Vector2.right))
+            else if (Input.GetKey(KeyCode.D) && canMove(Vector2.right))
                 dest = (Vector2)transform.position + Vector2.right;
-            if (Input.GetKey(KeyCode.DownArrow) && valid(-Vector2.up))
+            else if (Input.GetKey(KeyCode.S) && canMove(-Vector2.up))
                 dest = (Vector2)transform.position - Vector2.up;
-            if (Input.GetKey(KeyCode.LeftArrow) && valid(-Vector2.right))
+            else if (Input.GetKey(KeyCode.A) && canMove(-Vector2.right))
                 dest = (Vector2)transform.position - Vector2.right;
         }
 
-        // Animation Parameters
+        // Add Animation into it
         Vector2 dir = dest - (Vector2)transform.position;
         GetComponent<Animator>().SetFloat("X-axis", dir.x);
         GetComponent<Animator>().SetFloat("Y-axis", dir.y);
-        print(dir);
     }
 
-    bool valid(Vector2 dir)
+    bool canMove(Vector2 dir)
     {
-        // Cast Line from 'next to Pac-Man' to 'Pac-Man'
+        // check if Panman is facing the wall or not
         Vector2 pos = transform.position;
         RaycastHit2D hit = Physics2D.Linecast(pos + dir, pos);
         return (hit.collider == GetComponent<Collider2D>());

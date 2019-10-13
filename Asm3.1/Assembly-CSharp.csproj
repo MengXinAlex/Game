@@ -60,9 +60,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\BlueGhost.cs" />
     <Compile Include="Assets\Scripts\EatDots.cs" />
-    <Compile Include="Assets\Scripts\Manager.cs" />
+    <Compile Include="Assets\Scripts\GameBoard.cs" />
+    <Compile Include="Assets\Scripts\GhostMove.cs" />
+    <Compile Include="Assets\Scripts\Node.cs" />
     <Compile Include="Assets\Scripts\PacmanMove.cs" />
+    <Compile Include="Assets\Scripts\PinkGhost.cs" />
+    <Compile Include="Assets\Scripts\RedGhost.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>/Users/xianfengzhuge/study/UTS/31263/Asm/Game/Asm3.1/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>

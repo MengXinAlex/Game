@@ -10,6 +10,15 @@ public class PacmanMove : MonoBehaviour
 	private Node currentNode;
 	private Node previousNode;
 	private Node targetNode;
+
+	public AudioClip eatDotSound;
+	public AudioSource audio;
+
+    void Awake()
+	{
+		audio = transform.GetComponent<AudioSource>();
+	}
+
 	// Start is called before the first frame update
 	void Start()
     {
@@ -21,6 +30,7 @@ public class PacmanMove : MonoBehaviour
 
 		dest = Vector2.right;
 		ChangePosition(dest);
+
 
 	}
 
@@ -109,12 +119,14 @@ public class PacmanMove : MonoBehaviour
 
 
 
-
 		// Add Animation into it with direction
-		GetComponent<Animator>().SetFloat("X-axis", dest.x);
-        GetComponent<Animator>().SetFloat("Y-axis", dest.y);
-        
-    }
+		if (GameObject.Find("Game").GetComponent<GameBoard>().isStage2 == 1)
+		{
+			GetComponent<Animator>().SetFloat("X-axis", dest.x);
+			GetComponent<Animator>().SetFloat("Y-axis", dest.y);
+		}
+
+	}
 
 
 	void ChangePosition(Vector2 dir)
@@ -175,4 +187,6 @@ public class PacmanMove : MonoBehaviour
 		Vector2 vec = targetPosition - (Vector2)previousNode.transform.position;
 		return vec.sqrMagnitude;
 	}
+
+
 }

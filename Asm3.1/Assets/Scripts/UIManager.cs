@@ -7,10 +7,6 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     // Start is called before the first frame update
-    private GameObject innerHealthBar;
-    private GameObject HealthBar;
-    private GameObject player;
-    private Transform playerTransform;
     void Start()
     {
         DontDestroyOnLoad(gameObject);
@@ -19,27 +15,30 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		reload();
+		InputManage();
 
 
 	}
     public void LoadFirstLevel()
     {
         SceneManager.LoadScene(1);
-        //SceneManager.sceneLoaded += OnSceneLoaded;
     }
-    public void QuitGame()
-    {
-        UnityEditor.EditorApplication.isPlaying = false;
-    }
+	public void LoadHelpLevel()
+	{
+		SceneManager.LoadScene(3);
+	}
+	public void LoadStartLevel()
+	{
+		SceneManager.LoadScene(0);
+	}
 
-    void QuitMethod()
+	void QuitMethod()
     {
         UnityEditor.EditorApplication.isPlaying = false;
         Application.Quit();
     }
 
-    public void reload()
+    public void InputManage()
 	{
 		if (Input.GetKeyDown(KeyCode.R))
 		{

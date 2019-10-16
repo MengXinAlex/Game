@@ -62,14 +62,17 @@ public class GreenGhost : MonoBehaviour
 		}
 
 		// Add Animation into it with direction
-		GetComponent<Animator>().SetFloat("X-axis", direction.x);
-		GetComponent<Animator>().SetFloat("Y-axis", direction.y);
+		if (GameObject.Find("Game").GetComponent<GameBoard>().isStage2 == 1)
+		{
+			GetComponent<Animator>().SetFloat("X-axis", direction.x);
+			GetComponent<Animator>().SetFloat("Y-axis", direction.y);
+		}
 	}
 
 
 	Node ChooseNextNode()
 	{
-
+        //random direction at crossingg
 		Vector2 targetTile = Vector2.zero;
 		int temp = Random.Range(0, currentNode.neighbors.Length);
 		Node moveToNode = currentNode.neighbors[temp];
@@ -80,7 +83,7 @@ public class GreenGhost : MonoBehaviour
 
 	Node GetNodeAtPosition(Vector2 pos)
 	{
-
+        
 		GameObject tile = GameObject.Find("Game").GetComponent<GameBoard>().board[(int)pos.x, (int)pos.y];
 
 		if (tile != null)
@@ -99,6 +102,7 @@ public class GreenGhost : MonoBehaviour
 
 	float LengthFromNode(Vector2 targetPosition)
 	{
+        //calculate the length between nodes
 
 		Vector2 vec = targetPosition - (Vector2)previousNode.transform.position;
 		return vec.sqrMagnitude;
@@ -106,7 +110,7 @@ public class GreenGhost : MonoBehaviour
 
 	bool OverShotTarget()
 	{
-
+        //bool if ghost is at cross
 		float nodeToTarget = LengthFromNode(targetNode.transform.position);
 		float nodeToSelf = LengthFromNode(transform.localPosition);
 
@@ -116,5 +120,10 @@ public class GreenGhost : MonoBehaviour
 	{
 		if (co.name == "pacman")
 			SceneManager.LoadScene(2);
+		if (co.tag == "Bullet")
+		{
+			GameObject.Find("Game").GetComponent<GameBoard>().kills += 1;
+			Destroy(gameObject);
+		}		
 	}
 }

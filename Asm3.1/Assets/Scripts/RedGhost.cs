@@ -67,8 +67,12 @@ public class RedGhost : MonoBehaviour
 		}
 
 		// Add Animation into it with direction
-		GetComponent<Animator>().SetFloat("X-axis", direction.x);
-		GetComponent<Animator>().SetFloat("Y-axis", direction.y);
+		if (GameObject.Find("Game").GetComponent<GameBoard>().isStage2 == 1)
+		{
+			GetComponent<Animator>().SetFloat("X-axis", direction.x);
+			GetComponent<Animator>().SetFloat("Y-axis", direction.y);
+		}
+		
 	}
 
 
@@ -183,5 +187,10 @@ public class RedGhost : MonoBehaviour
 	{
 		if (co.name == "pacman")
 			SceneManager.LoadScene(2);
+		if (co.tag == "Bullet")
+		{
+			GameObject.Find("Game").GetComponent<GameBoard>().kills += 1;
+			Destroy(gameObject);
+		}
 	}
 }

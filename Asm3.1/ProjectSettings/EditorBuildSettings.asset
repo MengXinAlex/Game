@@ -9,12 +9,18 @@ EditorBuildSettings:
     path: Assets/Scenes/StartScene.unity
     guid: 5d4877344849341af842f879619a2933
   - enabled: 1
-    path: Assets/Scenes/Level1.unity
+    path: Assets/Scenes/GameLevel.unity
     guid: 095f4aca4302a46b2b3fa094068cc7b7
   - enabled: 0
-    path: Assets/__DELETED_GUID_Trash/b79b8718fa61e46dab4796f6d4f07173
+    path: 
     guid: b79b8718fa61e46dab4796f6d4f07173
   - enabled: 1
     path: Assets/Scenes/End.unity
     guid: d57fbec76ddd04123b7b90fef26ad057
+  - enabled: 1
+    path: Assets/Scenes/HelpScene.unity
+    guid: 8447efcffc3f147c196408906ec176ad
+  - enabled: 1
+    path: Assets/Scenes/Cleared.unity
+    guid: f5d9c847a4e4541699845c2bf1600a2e
   m_configObjects: {}
